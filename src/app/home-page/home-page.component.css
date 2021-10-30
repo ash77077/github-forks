@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    font-weight: 300;
+}
+
+header {
+    padding: 70px;
+    margin: 10px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 100%;
+    font-size: 70px;
+}
+
+.hello {
+    width: fit-content;
+    position: relative;
+    color: white;
+    animation: hello 5s 1s linear alternate, cominghello 1s;
+    font-size: 70px;
+}
+
+.hello-info {
+    width: fit-content;
+    position: relative;
+    color: white;
+    left: 600px;
+    animation: hello-info 5s 1s linear alternate, cominghello-info 1s;
+    font-size: 70px;
+
+}
+
+@keyframes cominghello {
+    0% {
+        top: -100px;
+        left: -50px;
+        opacity: 0
+    }
+    100% {
+        top: 0px;
+        left: -50px;
+        opacity: 1
+    }
+}
+
+@keyframes hello {
+    from {
+        left: -50px;
+        color: red;
+    }
+    to {
+        left: 900px;
+        color: white;
+    }
+}
+
+@keyframes cominghello-info {
+    from {
+        left: 550px;
+        top: 100px;
+    }
+    to {
+        left: 550px;
+        top: 0;
+    }
+}
+
+@keyframes hello-info {
+    from {
+        left: 550px;
+        color: orange;
+    }
+    to {
+        left: -100px;
+        color: white;
+    }
+}
+
+.static-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.static-hello {
+    color: red;
+    text-align: center;
+    animation: static-hello 1.5s linear infinite;
+}
+
+.static-hello-info {
+    color: orange;
+    text-align: center;
+    animation: static-hello-info 1.5s linear infinite;
+}
+
+@keyframes static-hello {
+    0% {
+        color: red;
+    }
+    50% {
+        color: orange;
+    }
+    100% {
+        color: red;
+    }
+}
+
+@keyframes static-hello-info {
+    0% {
+        color: orange;
+    }
+    50% {
+        color: red;
+    }
+    100% {
+        color: orange;
+    }
+}

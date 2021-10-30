@@ -1,0 +1,33 @@
+<div *ngIf="UsersInfo.length" class="col-lg-10">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Condensed Table
+    </div>
+    <div class="card-body">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <!-- <th class="heders" *ngFor="let info of UsersInfo[0] | keyvalue">{{info.key}}</th> -->
+            <th>Full Name</th>
+            <th>Owner</th>
+            <th>Repositories</th>
+            <th>Stars</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr (click)="goMore(infos.id)" class="user-info" *ngFor="let infos of UsersInfo | paginate: { itemsPerPage: 8, currentPage: cp }">
+            <td>{{infos.fullName}}</td>
+            <td>{{infos.owner}}</td>
+            <td>{{infos.repositories}}</td>
+            <td>{{infos.stars}}</td>
+          </tr>
+          <pagination-controls class="pagination" (pageChange)="cp = $event"></pagination-controls>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ngx-ui-loader
+[loaderId]="'loader-01'"
+></ngx-ui-loader>

@@ -1,0 +1,217 @@
+<div class="not-user" *ngIf="ErrorView">
+  User Not Found
+</div>
+
+<div>
+  <div *ngIf="!user.isFavorite" style="z-index: 244;" (click)="addToFavorite()">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50" style=" fill:#000000;"><path d="M 25 0.83398438 L 24.068359 3.2382812 L 18.599609 17.337891 L 0.8671875 18.347656 L 14.666016 29.566406 L 10.056641 46.654297 L 25 36.990234 L 39.943359 46.654297 L 35.333984 29.566406 L 49.132812 18.347656 L 31.400391 17.337891 L 25 0.83398438 z M 25 6.3632812 L 30 19.261719 L 43.867188 20.052734 L 33.066406 28.833984 L 36.65625 42.146484 L 25 34.609375 L 13.34375 42.146484 L 16.933594 28.833984 L 6.1328125 20.052734 L 20 19.261719 L 25 6.3632812 z"></path></svg>
+  </div>
+  <div *ngIf="user.isFavorite" style="z-index: 288;" (click)="addToFavorite()">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f1c40f"><path d="M86,128.1185l48.9555,29.54817l-12.99317,-55.685l43.25083,-37.46733l-56.9535,-4.83033l-22.25967,-52.51733l-22.25967,52.51733l-56.9535,4.83033l43.25083,37.46733l-12.99317,55.685z"></path></g></g></svg>
+  </div>
+  {{userId}}
+</div>
+<ngx-ui-loader [loaderId]="'loader-01'"></ngx-ui-loader>
+
+<section class="users-view">
+  <!-- Media object starts -->
+  <div class="row">
+    <div class="col-12 col-sm-7">
+      <div class="media d-flex align-items-center">
+        <a href="javascript:;">
+          <img src="assets/img/portrait/small/avatar-s-2.png" alt="user view avatar"
+            class="users-avatar-shadow rounded" height="64" width="64">
+        </a>
+        <div class="media-body ml-3">
+          <h4>
+            <span class="users-view-name mr-1">Dean Stanley</span>
+            <span class="text-muted font-medium-1">
+              <span>@</span>
+              <span class="users-view-username">dean3004</span>
+            </span>
+          </h4>
+          <span class="mr-1">ID:</span>
+          <span class="users-view-id">300</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-5 d-flex justify-content-end align-items-center">
+      <a href="javaScript:void(0);" class="btn btn-sm bg-light-secondary mr-2 px-3 py-1"><i class="ft-mail"></i></a>
+      <a href="javaScript:void(0);" class="btn btn-sm bg-light-secondary mr-2 px-3 py-1">Profile</a>
+      <a [routerLink]="['/pages/users-edit']" class="btn btn-sm btn-primary px-3 py-1">Edit</a>
+    </div>
+  </div>
+  <!-- Media object ends -->
+
+  <div class="row">
+    <div class="col-12">
+      <!-- Card data starts -->
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-xl-4">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>Registered:</td>
+                      <td>2019/01/01</td>
+                    </tr>
+                    <tr>
+                      <td>Latest Activity:</td>
+                      <td class="users-view-latest-activity">2019/04/30</td>
+                    </tr>
+                    <tr>
+                      <td>Verified:</td>
+                      <td class="users-view-verified">Yes</td>
+                    </tr>
+                    <tr>
+                      <td>Role:</td>
+                      <td class="users-view-role">Staff</td>
+                    </tr>
+                    <tr>
+                      <td>Status:</td>
+                      <td><span class="badge bg-light-success users-view-status">Active</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-12 col-xl-8 users-module">
+                <div class="table-responsive">
+                  <table class="table mb-0">
+                    <thead>
+                      <tr>
+                        <th>Module Permission</th>
+                        <th>Read</th>
+                        <th>Write</th>
+                        <th>Create</th>
+                        <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Users</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td>Articles</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td>Staff</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>No</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card data ends -->
+    </div>
+    <div class="col-12">
+      <!-- User detail starts -->
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="row bg-primary bg-lighten-4 rounded mb-3 mx-1 text-center text-lg-left">
+              <div class="col-12 col-sm-4 p-3 d-flex align-itms-center">
+                <h6 class="primary align-self-center mb-0 mx-1">Posts:</h6>
+                <span class="font-large-1 primary">125</span>
+              </div>
+              <div class="col-12 col-sm-4 p-3 d-flex align-itms-center">
+                <h6 class="primary align-self-center mb-0 mx-1">Followers:</h6>
+                <span class="font-large-1 primary">534</span>
+              </div>
+              <div class="col-12 col-sm-4 p-3 d-flex align-itms-center">
+                <h6 class="primary align-self-center mb-0 mx-1">Following:</h6>
+                <span class="font-large-1 primary">256</span>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>Username:</td>
+                      <td class="users-view-username">dean3004</td>
+                    </tr>
+                    <tr>
+                      <td>Name:</td>
+                      <td class="users-view-name">Dean Stanley</td>
+                    </tr>
+                    <tr>
+                      <td>E-mail:</td>
+                      <td>deanstanley@gmail.com</td>
+                    </tr>
+                    <tr>
+                      <td>Company:</td>
+                      <td>XYZ Corp. Ltd.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h5 class="mb-2 text-bold-500"><i class="ft-link mr-2"></i>Social Links</h5>
+              <div class="table-responsive">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>Twitter:</td>
+                      <td><a href="javascript:;">https://www.twitter.com/</a></td>
+                    </tr>
+                    <tr>
+                      <td>Facebook:</td>
+                      <td><a href="javascript:;">https://www.facebook.com/</a></td>
+                    </tr>
+                    <tr>
+                      <td>Instagram:</td>
+                      <td><a href="javascript:;">https://www.instagram.com/</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h5 class="mb-2 text-bold-500"><i class="ft-info mr-2"></i> Personal Info</h5>
+              <div class="table-responsive">
+                <table class="table table-borderless m-0">
+                  <tbody>
+                    <tr>
+                      <td>Birthday:</td>
+                      <td>1990/04/03</td>
+                    </tr>
+                    <tr>
+                      <td>Country:</td>
+                      <td>USA</td>
+                    </tr>
+                    <tr>
+                      <td>Languages:</td>
+                      <td>English</td>
+                    </tr>
+                    <tr>
+                      <td>Contact:</td>
+                      <td>+(305) 254 24668</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- User detail ends -->
+    </div>
+  </div>
+</section>

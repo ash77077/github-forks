@@ -1,0 +1,29 @@
+.user-info:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.active {
+  height: 20px;
+  width: 100%;
+  background-color: beige;
+}
+
+.user-info-single {
+  border: 1px solid;
+}
+
+.heders {
+  text-transform: capitalize;
+}
+
+.pagination {
+  width: max-content;
+  margin-left: 60%;
+}
+
+/* .user-info::after {
+  content: url("https://img.icons8.com/emoji/48/000000/right-arrow-emoji.png");
+  height: 10px;
+  width: 30px;
+} */
