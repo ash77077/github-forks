@@ -1,3 +1,15 @@
+<div class="main-search">
+  <form action="">
+    <label class="search-label" for="">enter the count of the required data</label>
+    <div>
+      <input class="search" type="search" placeholder="Count To 100" [(ngModel)]="inputData"
+        [ngModelOptions]="{standalone: true}">
+      <button (click)="getUsers()" class="search-btn">Continue</button>
+    </div>
+  </form>
+</div>
+
+
 <div *ngIf="UsersInfo.length" class="col-lg-10">
   <div class="card">
     <div class="card-header">
@@ -7,7 +19,6 @@
       <table class="table table-sm">
         <thead>
           <tr>
-            <!-- <th class="heders" *ngFor="let info of UsersInfo[0] | keyvalue">{{info.key}}</th> -->
             <th>Full Name</th>
             <th>Owner</th>
             <th>Repositories</th>
@@ -15,7 +26,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr (click)="goMore(infos.id)" class="user-info" *ngFor="let infos of UsersInfo | paginate: { itemsPerPage: 8, currentPage: cp }">
+          <tr (click)="goMore(infos.id)" class="user-info"
+            *ngFor="let infos of UsersInfo | paginate: { itemsPerPage: 8, currentPage: cp }">
             <td>{{infos.fullName}}</td>
             <td>{{infos.owner}}</td>
             <td>{{infos.repositories}}</td>
@@ -28,6 +40,4 @@
   </div>
 </div>
 
-<ngx-ui-loader
-[loaderId]="'loader-01'"
-></ngx-ui-loader>
+<ngx-ui-loader [loaderId]="'loader-01'"></ngx-ui-loader>

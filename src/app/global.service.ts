@@ -11,6 +11,7 @@ export class GlobalService {
   count: number | any = 10;
   singleUserId: number | any;
   singleUserInfo: any;
+  userName: string | any;
 
   constructor(public http: HttpClient) {
     //    
@@ -24,5 +25,10 @@ export class GlobalService {
       console.error(error)
       return []
     }
+  }
+
+  getUser(): Observable<Data> {
+    const url = `https://api.github.com/users/${this.userName}`;
+    return this.http.get<DataTransferItem>(url);
   }
 }

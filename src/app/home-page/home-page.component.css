@@ -31,7 +31,6 @@ header {
     left: 600px;
     animation: hello-info 5s 1s linear alternate, cominghello-info 1s;
     font-size: 70px;
-
 }
 
 @keyframes cominghello {
@@ -120,4 +119,16 @@ header {
     100% {
         color: orange;
     }
+}
+
+.go-users-list{
+    height: 40px;
+    background-color: yellowgreen;
+    padding: 5px;
+    border-color: rgba(255, 255, 255, 0.938);
+}
+
+.go-users-list:hover{
+    background-color: rgb(145, 199, 37);
+    border-color: white;
 }

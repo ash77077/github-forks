@@ -22,6 +22,7 @@ import { SingleListComponent } from './single-list/single-list.component';
  * Routing
  */
 import { AppRoutingModule } from './app-routing.module';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     ListComponent,
     SearchComponent,
     SingleListComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

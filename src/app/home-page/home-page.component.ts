@@ -7,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  timeOut:boolean = true
-
-  constructor() { 
-    setTimeout(() => {
-      this.timeOut = false
-    }, 5000);
+  timeOut: boolean = true
+  type: any = 'countUsers'
+  constructor() {
+    if (!localStorage.getItem('hay')) {
+      setTimeout(() => {
+        this.timeOut = false
+        localStorage.setItem('hay', "1")
+      }, 5000);
+    } else {
+      this.timeOut = false;
+    }
   }
-
 
   ngOnInit(): void {
+    //
   }
-
-  
 
 }

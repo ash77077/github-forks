@@ -1,10 +1,10 @@
 <div class="main-search">
     <form action="">
-        <label class="search-label" for="">enter the name of the required data</label>
+        <label class="search-label" for="">enter the user repos of the required</label>
         <div>
-            <input class="search" type="search" placeholder="Search" [(ngModel)]="inputData" [ngModelOptions]="{standalone: true}">
-            <button (click)="continue()" class="search-btn" routerLink="/list">Continue</button>
-            <!-- {{inputData}} -->
+            <input class="search" type="search" placeholder="USERNAME/REPO" [(ngModel)]="inputData"
+                [ngModelOptions]="{standalone: true}">
+            <button (click)="continue()" class="search-btn">Find Repo</button>
         </div>
     </form>
 </div>

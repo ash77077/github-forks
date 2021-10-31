@@ -1,36 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { GlobalService } from './global.service';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'Iguan-Task';
-  data: any = []
-
-
-  constructor(
-    public global: GlobalService,
-    public router: Router
-  ) {
+export class AppComponent {
+  title = 'Iguan Systems';
+  constructor() {
     //
   }
-
-  ngOnInit() {
-    setTimeout(() => {
-      // this.getDatas()
-    }, 2000);
-
-  }
-
-  //  async getDatas(){
-  //     this.data = await this.global.getData()
-  //     console.log(this.data);
-
-  //   }
-
-
 }

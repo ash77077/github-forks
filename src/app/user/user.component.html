@@ -1,0 +1,35 @@
+<div *ngIf="ErrorView">
+  <button class="go-home" routerLink="/home">Back To Home</button>
+  <div class="not-user">
+    User Not Found
+  </div>
+</div>
+
+<div *ngIf="!ErrorView" class="github-card user-card">
+  <div class="header User"></div>
+  <a class="avatar" [href]="'https://github.com/'+user?.login">
+    <img [src]="user?.avatar_url+'&amp;s=80'" [alt]="user?.name" />
+  </a>
+  <div class="content">
+    <h1>{{user?.name ? user.name : user?.login }}</h1>
+    <ul class="status">
+      <li>
+        <a [href]="'https://github.com/'+user?.login+'?tab=repositories'">
+          <strong>{{user?.public_repos}}</strong>Repos
+        </a>
+      </li>
+      <li>
+        <a [href]="'https://gist.github.com/'+user?.login">
+          <strong>{{user?.public_gists}}</strong>Gists
+        </a>
+      </li>
+      <li>
+        <a [href]="'https://github.com/'+user?.login+'/followers'">
+          <strong>{{user?.followers}}</strong>Followers
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ngx-ui-loader [loaderId]="'loader-01'"></ngx-ui-loader>

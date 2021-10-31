@@ -17,14 +17,26 @@ export class ListComponent implements OnInit {
   active: boolean = true;
   cp: number = 1;
   isFavorite: boolean = false
+  inputData: string = ''
 
   constructor(
     public global: GlobalService,
     public router: Router,
     private ngxService: NgxUiLoaderService
-  ) { }
+  ) {
+    //
+  }
 
-  ngOnInit() {    
+  ngOnInit() {
+    if (!this.UsersInfo.length) {
+      this.getUsers()
+    }
+  }
+
+  getUsers() {
+    this.UsersInfo.length = 0
+    this.ngxService.startLoader("loader-01");
+    this.global.count = this.inputData
     this.global.getData().subscribe((data: any) => {
       data.map((item: any) => {
         item.isFavorite = false
@@ -39,10 +51,7 @@ export class ListComponent implements OnInit {
         this.ngxService.stopLoader("loader-01");
         this.GlobalData = data
       })
-      this.UsersInfo[1].isFavorite = true
-
     })
-    this.ngxService.startLoader("loader-01");
   }
 
   goMore(id: any) {
@@ -56,7 +65,4 @@ export class ListComponent implements OnInit {
       }
     })
   }
-
-  
-
 }

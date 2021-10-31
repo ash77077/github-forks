@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GlobalService } from '../global.service'
 
 @Component({
@@ -9,16 +10,22 @@ import { GlobalService } from '../global.service'
 export class SearchComponent implements OnInit {
 
   inputData: string | any = '';
-
-  constructor(private global: GlobalService) {
-
+  constructor(
+    private global: GlobalService,
+    public router: Router
+  ) {
+    // 
   }
 
   ngOnInit(): void {
-    // this.global.getData()
+    //
   }
   continue() {
-    this.global.count = this.inputData
-
+    if (this.inputData) {
+      this.global.userName = this.inputData
+      this.router.navigate(['/user'])
+    }
   }
+
+  
 }
