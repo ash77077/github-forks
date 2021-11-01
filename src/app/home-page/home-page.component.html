@@ -3,10 +3,13 @@
     <p class="hello-info">This is Iguan Systems</p>
 </div>
 
-<div>
-    <button routerLink="/list" class="go-users-list">Go Users List</button>
-</div>
+<div *ngIf="!timeOut">
 
-<div>
-    <app-search></app-search>
+    <div>
+        <button routerLink="/list" class="go-users-list">Go Users List</button>
+    </div>
+    
+    <div>
+        <app-search></app-search>
+    </div>
 </div>
